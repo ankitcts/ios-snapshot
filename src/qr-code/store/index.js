@@ -1,5 +1,6 @@
 import { action, computed, makeObservable, observable } from "mobx";
 import { createURL } from "./helper";
+import { v4 as uuidv4 } from 'uuid';
 
 
 export class Store{
@@ -11,8 +12,15 @@ export class Store{
             generated: observable,
             onQRChange: action,
             value: computed,
+            createUUID: action,
             QRCodeURL: computed
-        })
+        });
+
+        this.createUUID();
+    }
+
+    createUUID = ()=>{
+        this.userInstanceValue = uuidv4();
     }
 
     userInstanceValue = "";

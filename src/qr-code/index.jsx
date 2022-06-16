@@ -61,7 +61,7 @@ export  const SignIn =  observer((props) => {
             value={props.value}
             onChange={(e)=>props.onChange(e.target.value)}
           />
-          <Button
+          {/* <Button
             type="submit"
             fullWidth
             variant="contained"
@@ -70,7 +70,7 @@ export  const SignIn =  observer((props) => {
             onClick={props.onSet}
           >
             <span>Generate Code </span>
-          </Button>
+          </Button> */}
           {/* <If condition={props.available}> */}
               <Generator value={props.qrCode}/>
           {/* </If> */}
