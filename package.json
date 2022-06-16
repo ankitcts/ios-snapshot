@@ -4,6 +4,7 @@
   "description": "Project setup for React and webpack with jest",
   "main": "index.js",
   "scripts": {
+    "install": "npx install", 
     "start": "webpack-dev-server --config webpack/webpack.dev.config.js",
     "build": "webpack --mode production --config webpack/webpack.prod.config.js"
   },
