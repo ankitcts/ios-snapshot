@@ -29,7 +29,11 @@ export class App extends React.Component{
                  onChange={this.instance.onQRChange}
                  onReset={this.instance.onReset}
                  qrCode={this.instance.QRCodeURL}
-                 available={this.instance.generated}/>
+                 available={this.instance.generated}
+                 onSubscriptionClick={this.instance.onSubscription}
+                 showNotification={this.instance.showNotification}
+                 notificationMessage={this.instance.notificationReceived}
+                 />
             </section>
         )
     }

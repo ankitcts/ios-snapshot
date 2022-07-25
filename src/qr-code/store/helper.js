@@ -3,3 +3,18 @@ export const createURL = ({instance, userValue}) => {
     // const _param  = userValue ?  "?" : "&";
     return userValue + "&"+"_session-cookie="+instance; 
 }
+
+export const connectToServer = async (url = 'ws://localhost:8000/subscribeUpdate') => {
+    const ws = new WebSocket(url);
+    return new Promise((resolve, reject) => {
+        const timer = setInterval(() => {
+            if(ws.readyState === 1) {
+                clearInterval(timer)
+                console.log('Web Socket connect for subscription')
+                resolve(ws);
+            }
+        }, 10);
+    });
+}
+
+export const send = (socket, data) => socket.send(JSON.stringify(data));

@@ -10,6 +10,12 @@ module.exports = merge(webCommon, {
     port: 8081,
     host: "localhost",
     hot: true,
+    proxy: [
+      {
+        context: ['/**'],
+        target: 'htp://localhost:8000'
+      }
+    ]
     // disableHostCheck: true,
     // compress: true,
     // contentBase: path.join(__dirname, "../public/"),
