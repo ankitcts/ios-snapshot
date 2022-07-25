@@ -33,6 +33,7 @@ export class App extends React.Component{
                  onSubscriptionClick={this.instance.onSubscription}
                  showNotification={this.instance.showNotification}
                  notificationMessage={this.instance.notificationReceived}
+                 isEnabled={this.instance.isEnabled}
                  />
             </section>
         )

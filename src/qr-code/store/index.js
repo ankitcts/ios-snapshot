@@ -9,19 +9,22 @@ export class Store{
     userEnteredValue = "test";
     generated = false;
     notificationReceived = '';
+    webSocketConnected =  false;
 
     constructor(){
         makeObservable(this,{
             userInstanceValue: observable,
             userEnteredValue: observable,
             notificationReceived: observable,
+            webSocketConnected: observable,
             generated: observable,
             onQRChange: action,
             value: computed,
             createUUID: action,
             QRCodeURL: computed,
             showNotification: computed,
-            onPostMessageUpdate: action
+            onPostMessageUpdate: action,
+            isEnabled: computed
         });
 
         this.createUUID();
@@ -60,6 +63,10 @@ export class Store{
 
         return false;
     }
+
+    get isEnabled() {
+        return this.webSocketConnected;
+    }
     onQRChange = (value) => {
         this.userEnteredValue = value;
     }
@@ -78,6 +85,7 @@ export class Store{
     
     onSubscription = async() => {
         const socket = await connectToServer();
+        this.webSocketConnected = true;
         socket.onmessage = this.onPostMessageUpdate
     }
 

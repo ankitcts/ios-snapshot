@@ -58,6 +58,7 @@ export  const SignIn =  observer((props) => {
             color="primary"
             className={classes.submit}
             onClick={props.onSubscriptionClick}
+            disabled={props.isEnabled}
           >
             <span>Subscribe To Post Api Updates </span>
           </Button>
