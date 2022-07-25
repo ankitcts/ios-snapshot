@@ -10,7 +10,6 @@ export const connectToServer = async (url = 'ws://localhost:8000/subscribeUpdate
         const timer = setInterval(() => {
             if(ws.readyState === 1) {
                 clearInterval(timer)
-                console.log('Web Socket connect for subscription')
                 resolve(ws);
             }
         }, 10);
