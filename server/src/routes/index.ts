@@ -10,6 +10,11 @@ export default function(app: Express) {
         // publish to web socket
         publish(req);;
         res.send('Post Call received');
+    });
+
+    app.get('/check', (req: Request, res: Response) => {
+        res.send('get Call received');
     })
+
 
 }

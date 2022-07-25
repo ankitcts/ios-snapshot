@@ -4,7 +4,9 @@ export const createURL = ({instance, userValue}) => {
     return userValue + "&"+"_session-cookie="+instance; 
 }
 
-export const connectToServer = async (url = 'ws://localhost:8000/subscribeUpdate') => {
+const currenthost = window.location.host;
+
+export const connectToServer = async (url = `ws://${currenthost}/subscribeUpdate`) => {
     const ws = new WebSocket(url);
     return new Promise((resolve, reject) => {
         const timer = setInterval(() => {

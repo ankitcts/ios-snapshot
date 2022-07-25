@@ -9,5 +9,8 @@ function default_1(app) {
         ;
         res.send('Post Call received');
     });
+    app.get('/check', (req, res) => {
+        res.send('get Call received');
+    });
 }
 exports.default = default_1;

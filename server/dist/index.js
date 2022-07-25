@@ -10,6 +10,7 @@ const routes_1 = __importDefault(require("./src/routes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
+app.use(express_1.default.static('public'));
 //register routes
 (0, routes_1.default)(app);
 const server = app.listen(port, () => {

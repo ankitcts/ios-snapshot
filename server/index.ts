@@ -8,7 +8,7 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
-
+app.use(express.static('public'))
 //register routes
 apiRoutes(app);
 

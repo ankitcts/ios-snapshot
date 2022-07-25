@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "start": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "start": "npx pm2 start dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "node-fetch": "^3.2.9",
+    "pm2": "^5.2.0",
     "query-string": "^7.1.1",
     "request": "^2.88.2",
     "ws": "^8.8.1"
